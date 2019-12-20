@@ -1,0 +1,89 @@
+<!Doctype html>
+<html>
+<head>
+<title>Test page
+</title>
+</head>
+<body>
+<audio controls muted autoplay>
+<src="" type="audio/mp3"/>
+</audio>
+<h1>This is Test Page</h1>
+
+<script>
+function showmsg(){
+alert("You have clicked !");}
+
+function selecfruite(){
+var data=document.querySelectorAll('li.fruite');
+for(var i=0;i<data.length;i++){ 
+ data[i].style.color="red";
+ data[i].style.backgroundColor='pink';
+ }};
+
+function selectAnimal(){
+var data2=document.querySelectorAll('li.animal');
+data2[0].style.color='orange';
+data2[0].style.backgroundColor='lightblue';
+data2[1].style.color='blue';
+data2[1].style.backgroundColor='lightblue';
+};
+
+function cl(){
+console.log("hi");
+var fr=document.querySelectorAll('li.fruite');
+for(let j=0;j<fr.length;j++){
+ fr[j].style.color="black";
+ fr[j].style.backgroundColor='white';}
+var an=document.querySelectorAll('li.animal');
+for(let k=0;k<an.length;k++){
+ an[k].style.color="black";
+ an[k].style.backgroundColor='white'; }
+};
+function allowdrop(ev){
+ev.preventDefault();};
+
+function drag(ev){
+ev.dataTransfer.setData("id",ev.target.id);
+};
+function drop(ev){
+ev.preventDefault();
+var data=ev.dataTransfer.getData("id");
+ev.target.appendChild(document.getElementById(data));
+};
+function checkshow(ev){
+console.log("Window Event");
+window.addEventListener("Online",function(){
+console.log("online");})
+}
+</script>
+
+<video controls muted poster="file:///C:/Users/ss251757/Music/logo.PNG">
+<src="" type=video/mp4>
+</video>
+<ul id="list">
+<li class="fruite">Apple</li>
+<li class="fruite">Mango</li>
+<li class="animal">Tiger</li>
+<li class="animal">Dog</li>
+</ul>
+
+<nav><button onclick="showmsg()" type="button">Button 1</boutton></nav>
+<nav><button onclick="selecfruite()">Select Fruites</boutton></nav>
+<nav><button onclick="selectAnimal()">Select Animals</boutton></nav>
+<nav><button onclick="cl()"> Clear All</button></nav>
+<img id="imgid" src="file:///C:/Users/ss251757/Music/logo.PNG" alt="image" ondragstart="drag(event)" draggable="true"/>
+<div id="divid" ondragover="allowdrop(event)" ondrop="drop(event)" > </div>
+<button type="button" id="b1" onclick="checkshow(event)">Show Window</button>
+
+
+<style>
+div{ width:120px;
+    height:120px;
+    padding:10px; 
+    border:1px solid #aaaaaa;
+}
+</style> 
+
+</body>
+</html>
