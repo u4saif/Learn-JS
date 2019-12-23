@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+<title>Test page</title>
+</head>
+<body>
+<h1 align=center >404</h1>
+<button id="b1" onclick="myfunction()"> Send </button>
+<text onclick="this.innerHTML='Good'">HI</text>
+<p id="p1">Get uri</p>
+</body>
+
+<script>
+
+function allowdrop(ev){
+ev.preventDefault();
+};
+
+function drag(ev){
+ev.dataTransfer.setData("id",ev.target.id);
+console.log(drag);
+};
+
+function drop(ev){
+ev.preventDefault();
+var data=ev.dataTransfer.getData("id");
+ev.target.appendChild(document.getElementById(data));
+console.log(ev);
+};
+
+function myfunction(){
+var url=" my<%window.alert()%>file:///C:/Users/ss251757OneDrive%20-%20NCR%20Corporation?Documents?docs/test2.html";
+var res=encodeURI(url);
+document.getElementById("p1").innerHTML=res;
+
+};
+</script>
+
+<img id="imgid" src="file:///C:/Users/ss251757/Music/logo.PNG" alt="image" ondragstart="drag(event)" draggable="true"/>
+<div id="divid" ondragover="allowdrop(event)" ondrop="drop(event)" >logo</div>
+<div id="divid2" ondragover="allowdrop(event)" ondrop="drop(event)" > </div>
+
+<style>
+div{ width:100px;
+    height:100px;
+    padding:1px; 
+    border:2px solid #7CEE3B;
+}
+</style> 
+</html>
