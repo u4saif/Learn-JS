@@ -1,0 +1,119 @@
+<html>
+<title>File</title>
+<body>
+
+<canvas id="mycanvas" style=" width:150px ; height:100px ;
+	border:2px solid #000 ; background-color:aqua;" >
+</canvas>
+<script src="script.js"></script>
+
+<svg width="500" height="200">
+<defs>
+<linearGradient id="linearGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="5%" stop-color="white"></stop>
+<stop offset="95%" stop-color="blue"></stop>
+</linearGradient>
+
+<pattern id="mypattern" x='0' y='0' width="0.25" height="0.25">
+<rect x="0" y="0" width="50" height="50" stroke="black" fill="url(#linearGrad)"
+</pattern>
+</defs>
+
+<rect x="0" y="0" width="200" height="200" stroke="black" fill="url(#mypattern)"/>
+<text  x="210" y="190" style="font-size:50px ; fill:url(#linearGrad); stroke:red ;">
+Hi All GooD?
+</text>
+
+</svg>
+<div id='div1'> </div>
+<div id='div2'> </div>
+<input type="text"></input>
+<svg id="svg2" width="100" height="100">
+
+</svg>
+</body>
+
+<style>
+div{
+width:20px;
+height:20px;
+background-color:pink;
+position:relative;
+animation-name:ani;
+animation-duration: 20s;
+animation-iteration-count:infinite;
+}
+
+#div2{
+width:50px;
+height:50px;
+background-color:blue;
+position:relative;
+animation-name:ani2;
+animation-duration: 40s;
+animation-iteration-count:infinite;
+}
+#svg2{
+position:relative;
+animation-name:ani3;
+animation-duration:5s;
+animation-iteration-count:infinite;
+}
+@keyframes ani{
+from { background-color:pink;
+	left:0px;
+	top:0px; }
+to { background-color:red;
+	left:1330px;
+	top:0px; }
+}
+
+@keyframes ani2{
+0% { background-color:blue;
+	left:0px;
+	top:0px; }
+25% { background-color:blue;
+	left:0px;
+	top:200px; }
+50% { background-color: red;
+	left:200px;
+	top:200px; }
+75% { background-color:yellow;
+	left:200px;
+	top:0px; }
+100% { background-color:green;
+	left:0px;
+	top:0px; }
+}
+
+input {
+width:100px;
+transition-duration:2s;
+transition-delay:.25s;
+}
+
+input:focus {
+width:300px;
+background:yellow;
+}
+
+@keyframes ani3{
+0% { background-color:orange;
+	left:0px;
+	top:0px; }
+25% { background-color:red;
+	left:0px;
+	top:0px; }
+50% { background-color: red;
+	left:0px;
+	top:0px; }
+75% { background-color:green;
+	left:0px;
+	top:0px; }
+100% { background-color:green;
+	left:0px;
+	top:0px; }
+}
+</style>
+
+</html>
