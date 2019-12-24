@@ -1,0 +1,60 @@
+<html>
+<title>404</title>
+<body bgcolor=lightgray>
+<h1 type=text align=center>Page Not Found</h1>
+<img id="img1" src="file:///C:/Users/ss251757/Music/logo.PNG" alt=img draggable="true" ondragstart="drag(event)"/>
+<div id='div1' ondragover="allowDrag(event)" ondrop="drop(event)">Hi
+</div>
+<button type="button" onclick="getAddr()">Get Location</button>
+<div id="div2"></div>
+<button type="button" onclick="count()">Click</button>
+<div id="div3"></div>
+<script>
+function allowDrag(ev){
+ev.preventDefault();}
+
+function drag(ev){
+ev.dataTransfer.setData('id',ev.target.id);}
+
+function drop(ev){
+ev.preventDefault();
+var data=ev.dataTransfer.getData('id');
+ev.target.appendChild(document.getElementById(data));}
+
+function getAddr(){
+
+if(navigator.geolocation)
+{navigator.geolocation.getCurrentPosition(showPosition);}
+}
+
+function showPosition(position){
+var x=document.getElementById("div2");
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function count(){
+
+ if(typeof Storage !="undefined") 
+ {if(localStorage.current)
+  {	
+	localStorage.current=Number(localStorage.current)+1; 
+	document.getElementById("div3").innerHTML= "You have clicked" +  localStorage.current;
+   }
+  else   
+   {localStorage.current=1;}
+}
+ else 
+{ alert(" Local Storage not Available");}
+}
+
+</script>
+
+<style>
+div{width:110px;
+    height:110px;
+   padding:10px;
+   border:2px solid #EE3B5E;}
+</style>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<title>File</title>
+<head>
+<style>
+span{ color:aqua;
+      font-size:28px;	
+      width:200px;
+      height:200px;	
+}
+
+div{ color:blue;
+      font-size:18px;	
+      width:200px;
+      height:200px;	
+}
+</style>
+</head>
+
+<body>
+<span>
+Hi all
+</span>
+<div>
+Got it
+</div>
+<canvas id="mycanvas" style=" width:150px ; height:100px ; border:2px solid #000 ; background-color:aqua;" >
+</canvas>
+<svg width=700 height=150 stroke-width:'4' fill='pink'>
+<circle cx='50' cy='50' r='50'/> 
+</svg>
+<svg width=700 height=150 stroke-width:'4' fill='pink'>
+<circle cx='50' cy='50' r='50'/> 
+<circle cx='150' cy='50' r='50'/> 
+<circle cx='250' cy='50' r='50'/> 
+</svg>
+
+
+</body>
+
+<script>
+var l=document.getElementById("mycanvas");
+var ltx=l.getContext('2d');
+ltx.moveTo(10,10);
+ltx.lineTo(190,90);
+ltx.stroke();
+
+var c=document.getElementById("mycanvas");
+var ctx=c.getContext('2d');
+ctx.beginPath();
+ctx.arc(90,50,40,0,2*Math.PI);
+ctx.stroke(); 
+
+</script>
+
+<script>
+for(let i=0;i<5;i++){
+console.log(i);
+}
+function linklist(){
+this.head=null;
+this.tail=null;
+}
+function node(value,){
+this.value=value;
+this.prev=null;
+this.next=null;}
+
+linklist.prototype.insert=function(value){
+this.value=value;
+let newnode= new node(value);
+if(this.head) this.head.prev=newnode;
+else this.tail=newnode;
+this.head=newnode;
+}
+var ll=new linklist();
+ll.insert(50);
+ll.insert(20);
+console.log(ll);
+</script>
+
+</html>
