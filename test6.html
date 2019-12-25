@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+
+<title>Serialization</title> 
+<script type="text/javascript" src= "http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+
+<form id="requestform">
+
+<input type="text" name="text1">
+
+<input type="text" name="text2">
+
+</form>
+
+<button type="button" onclick=" doSerialize()"> Serialize</button>
+
+<div id="demo"></div>
+
+<script>
+
+ function doSerialize() {
+  $("#demo").html($("#requestform").serialize());
+
+}
+
+</script>
+</body>
+</html>
